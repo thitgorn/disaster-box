@@ -111,7 +111,7 @@ button {
 }
 
 .unit {
-  padding-top: 30%;
+  padding-top: 25%;
   font-size: 20px;
 }
 
@@ -132,3 +132,16 @@ button {
     visibility: false;
 }
 
+.graph{
+  height: 30vh;
+}
+
+.warning{
+  background-color: red;
+  font-size: 180px;
+  text-align: center;
+}
+
+#warning{
+  font-size: 150px;
+}
