@@ -250,7 +250,7 @@ $(document).ready(function() {
       }
     ]
   });
-  var dataLength = 500;
+  var dataLength = 20;
   var updateChart = function() {
     for (var i = 0; i < info.length; i++) {
       if (info[i].length > dataLength) {
