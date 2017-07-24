@@ -58,3 +58,25 @@ img {
 .vertical {
   box-shadow: inset 0px 4px 6px #ccc;
 }
+
+input, button {
+    margin-left:4px;
+}
+input {
+    width:83px;
+}
+button {
+    width:87px;
+    padding:5px 0px 5px 0px;
+}
+
+.barcontainer {
+    border: 1px solid black;
+    width: 100%;
+    height: 100vh;
+}
+
+#bar-1 , #bar-2 , #bar-3 , #bar-4 , #bar-5 , #bar-6 , #bar-7 , #bar-8 , #bar-9 , #bar-10 {
+    margin-top: 10%;
+    border: 1px solid white;
+}

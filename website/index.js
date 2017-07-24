@@ -3,7 +3,6 @@ var object = ["air", "smoke", "temperature", "waterflow", "soilmosture"];
 
 $(document).ready(function() {
   $("#app").html();
-
   setInterval(function() {
     update();
   }, 1000);
