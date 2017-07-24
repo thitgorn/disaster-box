@@ -8,6 +8,12 @@
     background-color: yellow;
 }
 
+h4{
+    text-align: center;
+    border: 2px solid wheat;
+    background-color: white;
+}
+
 .progress-bar-purple {
       background-color: purple !important;
 }
