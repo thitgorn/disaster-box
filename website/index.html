@@ -14,106 +14,109 @@
     <link rel="stylesheet" href="index.css">
     <script src="./index.js"></script>
 </head>
-<style>
-    body {
-        background: url(7536921_orig.png);
-        background-size: cover;
-        background-repeat: no-repeat;
-    }
-</style>
 
 <body>
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">WebSiteName</a>
+    <div id="app">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">WebSiteName</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">INFORMATION</a></li>
+                    <li><a href="#">HISTORY</a></li>
+                </ul>
             </div>
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">INFORMATION</a></li>
-                <li><a href="#">HISTORY</a></li>
-            </ul>
-        </div>
-    </nav>
+        </nav>
 
-    <div class="fullscreen">
-        <div class="col-md-10">
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="cardcontainer">
-                        <h4><b>Air Pressure</b></h4>
-                        <div id="air"></div>
+        <div class="fullscreen">
+            <div class="col-md-10">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="cardcontainer">
+                            <h4><b>Air Pressure</b></h4>
+                            <div id="air" class="detail col-md-10"></div>
+                            <div class="unit col-md-2">Pa</div>
+                        </div>
+                        <div class="progress" id="progress">
+                            <div class="progress-bar" id="air-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+                            </div>
+                        </div>
                     </div>
-                    <div class="progress" id="progress">
-                        <div class="progress-bar" id="air-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+
+                    <div class="card">
+                        <div class="cardcontainer">
+                            <h4><b>Smoke</b></h4>
+                            <div id="smoke" class="detail col-md-10"></div>
+                            <div class="unit col-md-2">ppm</div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" id="smoke-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+                    <div class="blankrow"></div>
+
+                    <div class="card">
+                        <div class="cardcontainer">
+                            <h4><b>Temperature</b></h4>
+                            <div id="temperature" class="detail col-md-10"></div>
+                            <div class="unit col-md-2">C</div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" id="temperature-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="card">
-                    <div class="cardcontainer">
-                        <h4><b>Smoke</b></h4>
-                        <div id="smoke"></div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="cardcontainer">
+                            <h4><b>Water Flow</b></h4>
+                            <div id="waterflow" class="detail col-md-10"></div>
+                            <div class="unit col-md-2">L/min</div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" id="waterflow-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+                            </div>
+                        </div>
                     </div>
-                    <div class="progress">
-                        <div class="progress-bar" id="smoke-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+
+                    <div class="card">
+                        <div class="cardcontainer">
+                            <h4><b>Soil Mosture</b></h4>
+                            <div id="soilmosture" class="detail col-md-10"></div>
+                            <div class="unit col-md-2">%</div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" id="soilmosture-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+                            </div>
                         </div>
                     </div>
                 </div>
 
             </div>
-
-            <div class="col-md-4">
-                <div class="blankrow"></div>
-
-                <div class="card">
-                    <div class="cardcontainer">
-                        <h4><b>Temperature</b></h4>
-                        <div id="temperature"></div>
-                    </div>
-                    <div class="progress">
-                        <div class="progress-bar" id="temperature-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width:70%">
-                        </div>
-                    </div>
+            <div class="col-md-2">
+                <div class="titlebar">
+                    WARNING LEVEL !!
                 </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="cardcontainer">
-                        <h4><b>Water Flow</b></h4>
-                        <div id="waterflow"></div>
-                    </div>
-                    <div class="progress">
-                        <div class="progress-bar" id="waterflow-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width:70%">
-                        </div>
-                    </div>
+                <div class="barcontainer">
+                    <div id="bar-10"></div>
+                    <div id="bar-9"></div>
+                    <div id="bar-8"></div>
+                    <div id="bar-7"></div>
+                    <div id="bar-6"></div>
+                    <div id="bar-5"></div>
+                    <div id="bar-4"></div>
+                    <div id="bar-3"></div>
+                    <div id="bar-2"></div>
+                    <div id="bar-1"></div>
                 </div>
-
-                <div class="card">
-                    <div class="cardcontainer">
-                        <h4><b>Soil Mosture</b></h4>
-                        <div id="soilmosture"></div>
-                    </div>
-                    <div class="progress">
-                        <div class="progress-bar" id="soilmosture-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width:70%">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <div class="col-md-2">
-            <div class="barcontainer">
-                <div id="bar-1"></div>
-                <div id="bar-2"></div>
-                <div id="bar-3"></div>
-                <div id="bar-4"></div>
-                <div id="bar-5"></div>
-                <div id="bar-6"></div>
-                <div id="bar-7"></div>
-                <div id="bar-8"></div>
-                <div id="bar-9"></div>
-                <div id="bar-10"></div>
             </div>
         </div>
     </div>
