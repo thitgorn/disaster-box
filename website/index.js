@@ -8,6 +8,7 @@ var info = [
   (soilGraph = []),
   (totalGraph = [])
 ];
+var xVal = [0,0,0,0,0,0];
 var dismissTime = 0;
 
 $(document).ready(function() {
@@ -118,15 +119,17 @@ $(document).ready(function() {
 
         total += width;
         info[index].push({
-          x: parseInt(info[index].length),
+          x: xVal[index],
           y: parseInt(data)
         });
+        xVal[index]++;
       });
     });
     info[5].push({
-      x: parseInt(info[5].length),
+      x: xVal[5],
       y: parseInt(total / 5 / 10)
     });
+    xVal[5]++;
     changeTotalBar(Math.round(total / 5.0 / 10.0));
     total = 0;
   }
