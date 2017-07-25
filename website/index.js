@@ -8,7 +8,7 @@ var info = [
   (soilGraph = []),
   (totalGraph = [])
 ];
-var xVal = [0,0,0,0,0,0];
+var xVal = [0, 0, 0, 0, 0, 0];
 var dismissTime = 0;
 
 $(document).ready(function() {
@@ -45,6 +45,7 @@ $(document).ready(function() {
 
   var total = 0;
   function update() {
+    var count = 0;
     object.forEach(function(item, index) {
       read(item, function(data) {
         if (item == "air") {
@@ -97,12 +98,12 @@ $(document).ready(function() {
                 editWarning("Land slide !!");
                 break;
             }
-              
-            $('#page1').hide();
-            $('#page2').hide();
-            $('#page3').show();
-            $('#app').hide();
-            read("light/set/on",()=>console.log("light on"));
+
+            $("#page1").hide();
+            $("#page2").hide();
+            $("#page3").show();
+            $("#app").hide();
+            read("light/set/on", () => console.log("light on"));
             $("#dismiss").click(function() {
               dismissTime = new Date().getTime();
               $("#page2").hide(300);
@@ -111,13 +112,23 @@ $(document).ready(function() {
               $("#app").show();
               $("#2").removeClass("active");
               $("#1").addClass("active");
-            read("light/set/off",()=>console.log("light off"));
+              read("light/set/off", () => console.log("light off"));
             });
           }
         } else {
         }
 
         total += width;
+        count++;
+        if (count === 5) {
+          changeTotalBar(Math.round(total / 5.0 / 10.0));
+          info[5].push({
+            x: xVal[5],
+            y: Math.round(total / 5.0 / 10.0)
+          });
+          xVal[5]++;
+          total = 0;
+        }
         info[index].push({
           x: xVal[index],
           y: parseInt(data)
@@ -125,13 +136,6 @@ $(document).ready(function() {
         xVal[index]++;
       });
     });
-    info[5].push({
-      x: xVal[5],
-      y: parseInt(total / 5 / 10)
-    });
-    xVal[5]++;
-    changeTotalBar(Math.round(total / 5.0 / 10.0));
-    total = 0;
   }
 
   var progressbar = [
