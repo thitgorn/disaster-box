@@ -77,9 +77,9 @@ $(document).ready(function() {
         }
         if (width > 90) {
           //300,000
-          if (new Date().getTime() >= dismissTime + 180000) {
-            function editWarning(text) {
-              $("#warning").html(text);
+          if (new Date().getTime() >= dismissTime + 180000){
+          function editWarning(text) {
+            $("#warning").html(text);
             }
             switch (item) {
               case "air":
