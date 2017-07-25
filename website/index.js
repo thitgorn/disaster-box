@@ -127,6 +127,7 @@ $(document).ready(function() {
             y: Math.round(total / 5.0 / 10.0)
           });
           xVal[5]++;
+          console.log(count);
           total = 0;
         }
         info[index].push({
